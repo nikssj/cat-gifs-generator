@@ -10,6 +10,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+String imageUrl;
+
 class _HomePageState extends State<HomePage> {
   // @override
   // void initState() {
@@ -24,7 +26,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
 
-    String imageUrl;
     return Scaffold(
       appBar: AppBar(
         title: Text('Cat GIFs Generator'),
@@ -70,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                       '?v=${DateTime.now().millisecondsSinceEpoch}';
                   imageCache.clear();
                   imageCache.clearLiveImages();
+                  print(imageUrl);
                 });
               },
             )
