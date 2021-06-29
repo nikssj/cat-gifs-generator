@@ -47,7 +47,7 @@ Follow the installation instructions in their official page.
 * [Installation instructions](https://flutter.dev/docs/get-started/install)
 
 
-### Launch the project!
+## Launch the project!
 
 
 1. Clone the repo
@@ -66,13 +66,13 @@ Follow the installation instructions in their official page.
 ## Screenshots
 
 
-### DEMO
+### APP-DEMO
 [![DEMO-APP][demo]]
 
 
 
 <!-- CONTACT -->
-## Contacto
+## Contact
 
 Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
 
