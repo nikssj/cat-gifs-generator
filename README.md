@@ -2,9 +2,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://nikssj.dev">
+  
     <img src="assets/catjam.gif" alt="Logo" width="80" height="80">
-  </a>
+  
 
   <h3 align="center">Cat GIFs Generator</h3>
   <p align="center">
