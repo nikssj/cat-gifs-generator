@@ -6,14 +6,11 @@
     <img src="assets/catjam.gif" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Flutter challenge</h3>
+  <h3 align="center">Cat GIFs Generator</h3>
 
   <p align="center">
-    Cat GIFs Generator.
-    <br /> <br />
-    <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Descargar APK para Android</a>
-    <br />
-    <a href="https://drive.google.com/file/d/1agSN5i1AZ-JPXQ5i420YoXjYWwSidvih/view?usp=sharing">Descargar GoogleServices.json</a>
+ 
+    <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Download APK For Android</a>
     <br />
    
   </p>
@@ -25,7 +22,7 @@
 ## About the project
 
 
-A simple project where you can see some funny cats gifs!
+A simple project where you can see some funny gifs about cats!
 
 
 
