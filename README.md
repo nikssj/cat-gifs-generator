@@ -1,16 +1,88 @@
-# azumo_challenge
 
-A new Flutter project.
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://nikssj.dev">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Getting Started
+  <h3 align="center">Flutter challenge</h3>
 
-This project is a starting point for a Flutter application.
+  <p align="center">
+    Cat GIFs Generator.
+    <br /> <br />
+    <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Descargar APK para Android</a>
+    <br />
+    <a href="https://drive.google.com/file/d/1agSN5i1AZ-JPXQ5i420YoXjYWwSidvih/view?usp=sharing">Descargar GoogleServices.json</a>
+    <br />
+   
+  </p>
+</p>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<!-- ABOUT THE PROJECT -->
+## About the project
+
+
+A simple project where you can see some funny cats gifs!
+
+
+
+### Developed with
+
+This project has been developed with Flutter V2.0.6 | Stable
+
+* [Flutter v2.0.6](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.0.6-stable.zip)
+
+
+
+<!-- GETTING STARTED -->
+
+## Pre-requisites
+
+Download Flutter V2.0.6
+
+* [Flutter v2.0.6](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_2.0.6-stable.zip)
+
+Follow the installation instructions in their official page.
+
+* [Installation instructions](https://flutter.dev/docs/get-started/install)
+
+
+### Launch the project!
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/nikssj/azumo-challenge
+   ```
+2. Run flutter pub get in your console to download dependencies. 
+   ```sh
+   flutter pub get
+   ```
+3. Run the project. In case of using VSCode you can run it by downloading the Flutter plugin in the IDE, and then pressing F5. You will need also an Android device with USB Debug mode activated, or emulate a device with Android Studio.
+
+
+
+<!-- Screenshots -->
+## Screenshots
+
+
+### DEMO
+[![DEMO-APP][demo]]
+
+
+
+<!-- CONTACT -->
+## Contacto
+
+Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[linkedin-url]: https://linkedin.com/in/nikssj
+[demo]: assets/demo.gif
+
+

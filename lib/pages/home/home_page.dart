@@ -109,10 +109,12 @@ class _HomePageState extends State<HomePage> {
       isReloading = true;
     });
 
-    Uint8List bytes =
-        (await NetworkAssetBundle(Uri.parse(urlGifCat)).load(urlGifCat))
-            .buffer
-            .asUint8List();
+    Uint8List bytes = (await NetworkAssetBundle(Uri.parse(urlGifCat +
+                '?v=' +
+                DateTime.now().millisecondsSinceEpoch.toString()))
+            .load(urlGifCat))
+        .buffer
+        .asUint8List();
 
     setState(() {
       _pic = Image.memory(bytes, fit: BoxFit.cover);
