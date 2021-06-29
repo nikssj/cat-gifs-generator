@@ -1,26 +1,29 @@
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:azumo_challenge/apis/cat_generator_api.dart';
 import 'package:azumo_challenge/helpers/api_base_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter/services.dart';
 
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-String imageUrl;
-
 class _HomePageState extends State<HomePage> {
-  // @override
-  // void initState() {
-  //   super.initState();
+  String url = ApiBaseHelper().baseUrl + '/gif';
 
-  //   WidgetsBinding.instance.addPostFrameCallback((_) async {
-  //     await catGeneratorApi.getCat(context);
-  //   });
-  // }
+  Widget _pic;
+
+  @override
+  void initState() {
+    _pic = Image.network(url);
+    super.initState();
+    //   WidgetsBinding.instance.addPostFrameCallback((_) async {
+    //     await catGeneratorApi.getCat(context);
+    //   });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +40,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Card(
               elevation: 5,
-              child: FadeInImage(
-                  key: ValueKey(new Random().nextInt(100)),
-                  image: NetworkImage(
-                      imageUrl ?? ApiBaseHelper().baseUrl + '/gif'),
-                  placeholder: AssetImage('assets/jar-loading.gif'),
-                  height: _size.width * 0.7,
-                  fit: BoxFit.fill),
+              child: _pic,
             ),
             SizedBox(height: _size.height * 0.1),
             TextButton(
@@ -63,21 +60,24 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(18.0),
                           side: BorderSide(color: Colors.blue)))),
               onPressed: () {
-                print(imageUrl);
-
-                setState(() {
-                  imageUrl = ApiBaseHelper().baseUrl +
-                      '/gif' +
-                      '?v=${DateTime.now().millisecondsSinceEpoch}';
-                  imageCache.clear();
-                  imageCache.clearLiveImages();
-                  print(imageUrl);
-                });
+                _updateImgWidget();
               },
             )
           ],
         ),
       ),
     );
+  }
+
+  _updateImgWidget() async {
+    setState(() {
+      _pic = CircularProgressIndicator();
+    });
+    Uint8List bytes = (await NetworkAssetBundle(Uri.parse(url)).load(url))
+        .buffer
+        .asUint8List();
+    setState(() {
+      _pic = Image.memory(bytes);
+    });
   }
 }
