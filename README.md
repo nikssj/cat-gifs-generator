@@ -10,7 +10,7 @@
 
   <p align="center">
  <br /> 
-    <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Download APK For Android</a>
+    <a href="https://drive.google.com/file/d/1wCxGiTauWs73DnxWV9LduCIn0brGffaa/view?usp=sharing">Download APK For Android</a>
     <br />
    
   </p>
