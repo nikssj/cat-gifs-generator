@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:azumo_challenge/apis/cat_generator_api.dart';
@@ -12,13 +11,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String url = ApiBaseHelper().baseUrl + '/gif';
+  String urlGifCat = ApiBaseHelper().baseUrl + '/gif';
 
   Widget _pic;
 
+  bool isReloading = false;
+
   @override
   void initState() {
-    _pic = Image.network(url);
+    _updateImgWidget();
+
     super.initState();
     //   WidgetsBinding.instance.addPostFrameCallback((_) async {
     //     await catGeneratorApi.getCat(context);
@@ -30,54 +32,91 @@ class _HomePageState extends State<HomePage> {
     final _size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cat GIFs Generator'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text('Cat GIFs Generator'), centerTitle: true),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Card(
-              elevation: 5,
-              child: _pic,
+            Spacer(),
+            isReloading
+                ? Column(
+                    children: [
+                      CircularProgressIndicator(),
+                      SizedBox(height: _size.height * 0.05),
+                      Text(
+                        'Pss pss pss..',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
+                  )
+                //Cat Gif
+                : Card(elevation: 5, child: _pic),
+
+            //Footer button
+            Spacer(),
+            Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                        child: Padding(
+                      padding: EdgeInsets.only(
+                          top: _size.height * 0.07,
+                          bottom: _size.height * 0.04),
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: _buildGenerateButton(),
+                      ),
+                    )),
+                  ],
+                ),
+              ],
             ),
-            SizedBox(height: _size.height * 0.1),
-            TextButton(
-              child: Text("Generate!".toUpperCase(),
-                  style: TextStyle(fontSize: 14, color: Colors.white)),
-              style: ButtonStyle(
-                  padding: MaterialStateProperty.all<EdgeInsets>(
-                      EdgeInsets.symmetric(
-                          horizontal: _size.width * 0.15,
-                          vertical: _size.width * 0.05)),
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
-                  foregroundColor:
-                      MaterialStateProperty.all<Color>(Colors.blue),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                          side: BorderSide(color: Colors.blue)))),
-              onPressed: () {
-                _updateImgWidget();
-              },
-            )
           ],
         ),
       ),
     );
   }
 
-  _updateImgWidget() async {
+  Widget _buildGenerateButton() {
+    final _size = MediaQuery.of(context).size;
+
+    return TextButton(
+      child: Text(
+          isReloading
+              ? 'Looking for new cats..'.toUpperCase()
+              : "Get a new Gif!".toUpperCase(),
+          style: TextStyle(fontSize: 14, color: Colors.white)),
+      style: ButtonStyle(
+          padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(
+              horizontal: _size.width * 0.15, vertical: _size.width * 0.05)),
+          backgroundColor: MaterialStateProperty.all<Color>(
+              isReloading ? Colors.grey : Colors.blue),
+          foregroundColor: MaterialStateProperty.all<Color>(
+              isReloading ? Colors.grey : Colors.blue),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                  side: BorderSide(
+                      color: isReloading ? Colors.grey : Colors.blue)))),
+      onPressed: () {
+        isReloading ? print('reloading') : _updateImgWidget();
+      },
+    );
+  }
+
+  void _updateImgWidget() async {
     setState(() {
-      _pic = CircularProgressIndicator();
+      isReloading = true;
     });
-    Uint8List bytes = (await NetworkAssetBundle(Uri.parse(url)).load(url))
-        .buffer
-        .asUint8List();
+
+    Uint8List bytes =
+        (await NetworkAssetBundle(Uri.parse(urlGifCat)).load(urlGifCat))
+            .buffer
+            .asUint8List();
+
     setState(() {
-      _pic = Image.memory(bytes);
+      _pic = Image.memory(bytes, fit: BoxFit.cover);
+      isReloading = false;
     });
   }
 }
