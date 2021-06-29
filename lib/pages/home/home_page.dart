@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
       child: Text(
           isReloading
               ? 'Looking for new cats..'.toUpperCase()
-              : "Get a new Gif!".toUpperCase(),
+              : "Get a new cat!".toUpperCase(),
           style: TextStyle(fontSize: 14, color: Colors.white)),
       style: ButtonStyle(
           padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(
