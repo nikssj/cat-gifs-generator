@@ -52,7 +52,7 @@ Follow the installation instructions in their official page.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nikssj/azumo-challenge
+   git clone https://github.com/nikssj/cat-gifs-generator
    ```
 2. Run flutter pub get in your console to download dependencies. 
    ```sh
