@@ -19,7 +19,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About the project
+## About this project
 
 
 * A simple project where you can see some funny gifs about cats!
