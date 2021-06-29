@@ -9,7 +9,7 @@
   <h3 align="center">Cat GIFs Generator</h3>
 
   <p align="center">
- 
+ <br /> 
     <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Download APK For Android</a>
     <br />
    
@@ -22,7 +22,7 @@
 ## About the project
 
 
-A simple project where you can see some funny gifs about cats!
+* A simple project where you can see some funny gifs about cats!
 
 
 
@@ -69,17 +69,19 @@ Follow the installation instructions in their official page.
 ### DEMO
 [![DEMO-APP][demo]]
 
+<!-- Remaining things -->
+## TODO Items
+* Lack of dependency injection implementation.
+* Lack of widget testing.
 
 
 <!-- CONTACT -->
-## Contacto
+## Contact
 
-Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
+* Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [linkedin-url]: https://linkedin.com/in/nikssj
 [demo]: assets/demo.gif
-
-
