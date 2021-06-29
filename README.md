@@ -74,10 +74,4 @@ Follow the installation instructions in their official page.
 * Lack of dependency injection implementation.
 * Lack of widget testing.
 
-
-<!-- CONTACT -->
-## Contact
-
-* Nicolás Aybar - nicolas.aybar@azumo.co
-
 [demo]: assets/demo.gif
