@@ -78,10 +78,6 @@ Follow the installation instructions in their official page.
 <!-- CONTACT -->
 ## Contact
 
-* Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
+* Nicolás Aybar - nicolas.aybar@azumo.co
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-url]: https://linkedin.com/in/nikssj
 [demo]: assets/demo.gif
