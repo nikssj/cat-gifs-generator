@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://nikssj.dev">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="assets/catjam.gif" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Flutter challenge</h3>
