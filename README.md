@@ -7,7 +7,6 @@
   </a>
 
   <h3 align="center">Cat GIFs Generator</h3>
-
   <p align="center">
  <br /> 
     <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Download APK For Android</a>
