@@ -2,12 +2,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://nikssj.dev">
+  <a href="https://cataas.com/cat/gif">
     <img src="assets/catjam.gif" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Cat GIFs Generator</h3>
-
   <p align="center">
  <br /> 
     <a href="https://drive.google.com/file/d/1CLJGZWWncEbqneFVZy0plYqOIRQLoTf1/view?usp=sharing">Download APK For Android</a>
@@ -19,7 +18,7 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About the project
+## About this project
 
 
 * A simple project where you can see some funny gifs about cats!
@@ -47,12 +46,12 @@ Follow the installation instructions in their official page.
 * [Installation instructions](https://flutter.dev/docs/get-started/install)
 
 
-### Launch the project!
+## Launch the project!
 
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/nikssj/azumo-challenge
+   git clone https://github.com/nikssj/cat-gifs-generator
    ```
 2. Run flutter pub get in your console to download dependencies. 
    ```sh
@@ -74,14 +73,4 @@ Follow the installation instructions in their official page.
 * Lack of dependency injection implementation.
 * Lack of widget testing.
 
-
-<!-- CONTACT -->
-## Contact
-
-* Nicolás Aybar - [Linkedin](https://linkedin.com/in/nikssj) - naybar.dev@gmail.com
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-[linkedin-url]: https://linkedin.com/in/nikssj
 [demo]: assets/demo.gif
