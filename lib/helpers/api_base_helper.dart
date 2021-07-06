@@ -3,13 +3,12 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:azumo_challenge/config/environment_configuration.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ApiBaseHelper {
   String baseUrl = EnvironmentConfiguration.URL_DEVELOP;
 
-  Future get(String url, BuildContext context, String logAnalytics) async {
+  Future get(String url) async {
     http.Response response;
 
     try {

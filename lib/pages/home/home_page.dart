@@ -20,9 +20,6 @@ class _HomePageState extends State<HomePage> {
     _getRandomGif();
 
     super.initState();
-    //   WidgetsBinding.instance.addPostFrameCallback((_) async {
-    //     await catGeneratorApi.getCat(context);
-    //   });
   }
 
   @override
@@ -53,23 +50,13 @@ class _HomePageState extends State<HomePage> {
 
             //Footer button
             Spacer(),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Padding(
-                      padding: EdgeInsets.only(
-                          top: _size.height * 0.07,
-                          bottom: _size.height * 0.04),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: _buildGenerateButton(),
-                      ),
-                    )),
-                  ],
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.only(
+                  top: _size.height * 0.07, bottom: _size.height * 0.04),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: _buildGenerateButton(),
+              ),
             ),
           ],
         ),
