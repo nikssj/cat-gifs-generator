@@ -1,9 +1,9 @@
 import 'dart:typed_data';
 
-import 'package:azumo_challenge/apis/cat_generator_api.dart';
 import 'package:azumo_challenge/helpers/api_base_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
+import 'home_view_model.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    _updateImgWidget();
+    _getRandomGif();
 
     super.initState();
     //   WidgetsBinding.instance.addPostFrameCallback((_) async {
@@ -37,6 +37,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Spacer(),
+
+            //Reloading widget
             isReloading
                 ? Column(
                     children: [
@@ -80,6 +82,27 @@ class _HomePageState extends State<HomePage> {
   Widget _buildGenerateButton() {
     final _size = MediaQuery.of(context).size;
 
+    // return GestureDetector(
+    //   onTap: () async {
+    //     _getRandomGif();
+    //   },
+    //   child: Container(
+    //     decoration: BoxDecoration(
+    //       borderRadius: BorderRadius.all(
+    //         Radius.circular(10),
+    //       ),
+    //       color: Colors.blue,
+    //     ),
+    //     width: 150,
+    //     height: 50,
+    //     child: Center(
+    //         child: Text(
+    //       'Press me',
+    //       style: TextStyle(color: Colors.white),
+    //     )),
+    //   ),
+    // );
+
     return TextButton(
       child: Text(
           isReloading
@@ -99,25 +122,20 @@ class _HomePageState extends State<HomePage> {
                   side: BorderSide(
                       color: isReloading ? Colors.grey : Colors.blue)))),
       onPressed: () {
-        isReloading ? print('reloading') : _updateImgWidget();
+        isReloading ? print('reloading') : _getRandomGif();
       },
     );
   }
 
-  void _updateImgWidget() async {
+  void _getRandomGif() async {
     setState(() {
       isReloading = true;
     });
 
-    Uint8List bytes = (await NetworkAssetBundle(Uri.parse(urlGifCat +
-                '?v=' +
-                DateTime.now().millisecondsSinceEpoch.toString()))
-            .load(urlGifCat))
-        .buffer
-        .asUint8List();
+    Uint8List decodedCatGif = await homeViewModel.getNewCat();
 
     setState(() {
-      _pic = Image.memory(bytes, fit: BoxFit.cover);
+      _pic = Image.memory(decodedCatGif, fit: BoxFit.cover);
       isReloading = false;
     });
   }
