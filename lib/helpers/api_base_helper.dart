@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class ApiBaseHelper {
   String baseUrl = EnvironmentConfiguration.URL_DEVELOP;
 
-  Future get(String url, BuildContext context) async {
+  Future get(String url, BuildContext context, String logAnalytics) async {
     http.Response response;
 
     try {

@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:azumo_challenge/helpers/api_base_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -132,10 +130,20 @@ class _HomePageState extends State<HomePage> {
       isReloading = true;
     });
 
-    Uint8List decodedCatGif = await homeViewModel.getNewCat();
+    // final response = await homeViewModel.getNewCat();
+
+    // if (response == null) {
+    //   setState(() {
+    //     _pic = Text('no image');
+    //     isReloading = false;
+    //   });
+    //   return;
+    // }
+
+    await homeViewModel.getNewCat();
 
     setState(() {
-      _pic = Image.memory(decodedCatGif, fit: BoxFit.cover);
+      _pic = Image.memory(homeViewModel.cat.decodedGif, fit: BoxFit.cover);
       isReloading = false;
     });
   }
