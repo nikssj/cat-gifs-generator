@@ -66,7 +66,7 @@ Follow the installation instructions in their official page.
 
 
 ### DEMO
-[![DEMO-APP][demo]]
+![DEMO-APP][demo]
 
 <!-- Remaining things -->
 ## TODO Items
